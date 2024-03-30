@@ -6,15 +6,15 @@ Demonstre que $\forall n \in \mathbb{N}$:
 \begin{enumerate}
 	\item Indução sobre $n$.
 	\item Seja $\forall n \in \mathbb{N}, P(n) := \sum\limits_{i=1}^n i^2 = \frac{n (2n+1) (n+1)}{6}$.
-	\item Passo-base: $P(1)$
+	\item Passo-base: $n = 0$
 	\begin{align*}
-		\sum\limits_{i=1}^1 i^2 &= 1^2 &\quad(\text{Por def. rec. de $\sum$}) \\
-		&= 1 \\
-		&= \frac{6}{6} &\quad(\text{Por arit.}) \\
-		&= \frac{1 \cdot (2 \cdot 1 + 1) \cdot (1 + 1)}{6} \\
-		&= \frac{n \cdot (2n + 1) \cdot (n + 1)}{6} &\quad \text{(Para $n = 1$)}  
+		\sum\limits_{i=0}^0 i^2 &= 0^2 &\quad(\text{Por def. rec. de $\sum$}) \\
+		&= 0 &\quad \text{(Por arit.)}\\
+		&= \frac{0}{6} &\quad(\text{Por arit.}) \\
+		&= \frac{0 \cdot (2 \cdot 0 + 1) \cdot (0 + 1)}{6} &\quad \text{(Por reescrita de 0)} \\
+		&= \frac{n \cdot (2n + 1) \cdot (n + 1)}{6} &\quad \text{(Para $n = 0$)}  
 	\end{align*}
-	Logo, $P(1)$ é verdadeiro.
+	Logo, $P(0)$ é verdadeiro.
 	\item Para um certo $k \in \mathbb{N}, P(k):= \sum\limits_{i=1}^k i^2 = \frac{k (2k+1) (k+1)}{6}$ (Hipótese Indutiva). \\
 	(Provemos que $P(k+1) = \frac{(k+1) (2 \cdot (k+1) + 1) (k + 2)}{6}$). \\
 	\item Então, temos:
