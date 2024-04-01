@@ -1,0 +1,25 @@
+Demonstre que $\forall x,y z \in \mathbb{N}, x \cdot (y + z) = (x \cdot y + x \cdot z)$.
+\emph{Resolução.}
+\begin{enumerate}
+	\item Aplicaremos indução sobre $z$.
+	\item Seja $n \in \mathbb{N}, \forall x, y \in \mathbb{N}, x \cdot (y + n) = (x \cdot y + x \cdot n)$
+	\item Passo-base: $n = 0$
+	\begin{align*}
+		P(0) &= x \cdot (y + 0) \\ 
+		&= x \cdot y &\quad \text{(Por A1)} \\
+		&= (x \cdot y) + 0 &\quad \text{(Por A1)} \\ 
+		&= (x \cdot y) + (x \cdot 0) &\quad \text{(Por M1)}
+	\end{align*}
+	Logo, $P(0)$ é verdadeiro.
+	\item Seja um certo $k \in \mathbb{N}, \forall x,y \in \mathbb{N}, x \cdot (y + k) = (x \cdot y) + (x \cdot k)$ (HI). \\
+	(Provemos que $P(Suc(k)) = (x \cdot y) + (x \cdot Suc(k))$.)
+	\item Temos:
+	\begin{align*}
+		P(Suc(k)) &= x \cdot (y + Suc(k)) \\
+		&= x \cdot Suc(y + k) &\quad \text{(Por A2)} \\  
+		&= x \cdot (y + k) + x &\quad \text{(Por M2)} \\  
+		&= (x \cdot y) + (x \cdot k) + x &\quad \text{(Por HI)} \\  
+		&= (x \cdot y) + (x \cdot Suc(k)) &\quad \text{(Por M2)} \\  
+	\end{align*}
+	Logo, $P(Suc(k))$ é verdadeiro e o teorema está demonstrado. 
+\end{enumerate}
