@@ -2,21 +2,21 @@ $\forall a, b, c \in \mathbb{N}$ Se $a | b$ e $b | c$, então $a | (b \cdot x + 
 \emph{Resolução.} \\
 Seja $a, b, c, x, y \in \mathbb{N}$, com $a > 0, b > 0$. \\
 Temos que $a | b$, ou seja, $\exists w_1 \in \mathbb{N}, a \cdot w_1 = b$. \\
-Temos que $b | c$, ou seja, $\exists w_2 \in \mathbb{N}, b \cdot w_1 = c$. \\
+Temos que $b | c$, ou seja, $\exists w_2 \in \mathbb{N}, b \cdot w_2 = c$. \\
 Note que, por aritmética:
 \begin{align*}
-    a \cdot w_1 = b \iff a \cdot w_1 \cdot x = b \cdot x 
+    a \cdot w_1 = b \iff a \cdot w_1 \cdot x = b \cdot x
 \end{align*}
 Analogamente, temos:
 \begin{align*}
-    b \cdot w_2 = c \iff b \cdot w_2 \cdot y = c \cdot y 
+    b \cdot w_2 = c \iff b \cdot w_2 \cdot y = c \cdot y
 \end{align*}
 Somando as duas equações, teremos:
 \begin{align*}
-    (a \cdot w_1 \cdot x) + (b \cdot w_2 \cdot y) &= (b \cdot x) + (c \cdot y) \\ &\implies
+    (a \cdot w_1 \cdot x) + (b \cdot w_2 \cdot y) & = (b \cdot x) + (c \cdot y)         \\ &\implies
     (a \cdot w_1 \cdot x) + (a \cdot w_1 \cdot w_2 \cdot y) = (b \cdot x) + (c \cdot y) \\ &\quad \text{(Por reescrita de $b$)}\\ &\implies
-    a \cdot (\cdot w_1 \cdot x + w_1 \cdot w_2 \cdot y) = (b \cdot x) + (c \cdot y) \\ &\quad \text{(Por aritmética)} \\ &\implies
-    a \cdot w_3 = (b \cdot x) + (c \cdot y) \\ &\quad \text{(Para $w_3 = \cdot w_1 \cdot x + w_1 \cdot w_2 \cdot y$)}
+    a \cdot (\cdot w_1 \cdot x + w_1 \cdot w_2 \cdot y) = (b \cdot x) + (c \cdot y)     \\ &\quad \text{(Por aritmética)} \\ &\implies
+    a \cdot w_3 = (b \cdot x) + (c \cdot y)                                             \\ &\quad \text{(Para $w_3 = \cdot w_1 \cdot x + w_1 \cdot w_2 \cdot y$)}
 \end{align*}
-Logo, $\exists w_3 \cdot a = (b \cdot x) + (c \cdot y)$. 
+Logo, $\exists w_3 \cdot a = (b \cdot x) + (c \cdot y)$.
 Portanto, a proposição é verdadeira.
