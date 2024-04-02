@@ -2,32 +2,29 @@ Calcule a soma dos $n$ primeiros pares, em seguida, demonstre por indução. \\
 \emph{Resolução.}
 Note que:
 \begin{align*}
-	0 &= 0 \\
-	0 + 2 &= 2 \\
-	0 + 2 + 4 &= 6 \\
-	0 + 2 + 4 + 6 &= 12 \\
+	0             & = 0  \\
+	0 + 2         & = 2  \\
+	0 + 2 + 4     & = 6  \\
+	0 + 2 + 4 + 6 & = 12 \\
 \end{align*}
-Ou seja, a soma dos $n$ primeiros pares é dada por $n^2 + n$. Provemos essa proposição por indução. \\
-\begin{enumerate}
-	\item Seja $P(n):= \sum\limits_{i = 0}^{n}2i = 0 + 2 + 4 + 6 + \cdots + n = n^2 + n$ \\
-	\item Aplicaremos indução sobre $n \in \mathbb{N}$ \\
-	\item Vejamos o passo-base $P(0)$: 
-		\begin{align*}
-			\sum\limits_{i = 0}^{0} &= 0  \\	
-			&= 0 + 0 &\quad(\text{Por aritmética}) \\
-			&= 0^2 + 0 &\quad(\text{Por aritmética}) \\
-			&= n^2 + n &\quad(\text{Para $n = 0$})
-		\end{align*}
-	Logo, $P(0)$ é verdadeiro. \\
-	\item Para um certo $k \in \mathbb{N}, P(k):= \sum\limits_{i = 0}^{k}2i = k^2 + k$ (Hipótese Indutiva). \\
-	(Provemos que $P(k + 1) = (k + 1)^2 + (k + 1)$). \\
-	\item Então, temos:
-		\begin{align*}
-			\sum\limits_{i=0}^{k + 1}2i &= (\sum\limits_{i = 0}^{k}2i) + 2(k + 1) &\quad(\text{Por def. rec. de Somatório}) \\
-			&= (k^2 + k) + 2(k + 1) &\quad(\text{Por H.I}) \\
-			&= k^2 + k + 2k + 2 &\quad(\text{Por arit.}) \\
-			&= k^2 + 3k + 2 &\quad(\text{Por arit.})\\
-			&= (k + 1)^2 + (k + 1) &\quad(\text{Por arit.})
-		\end{align*}	
-	Logo, $P(k + 1)$ é verdadeiro e a proposição inicial é verdadeira.
-\end{enumerate}
+Ou seja, a soma dos $n$ primeiros pares é dada por $n^2 + n$. Provemos essa proposição por indução sobre $n$. \\
+Seja $P(n):= \sum\limits_{i = 0}^{n}2i = 0 + 2 + 4 + 6 + \cdots + n = n^2 + n$ \\
+Passo base: $n = 0$
+\begin{align*}
+	\sum\limits_{i = 0}^{0} & = 0                                      \\
+	                        & = 0 + 0   & \quad(\text{Por aritmética}) \\
+	                        & = 0^2 + 0 & \quad(\text{Por aritmética}) \\
+	                        & = n^2 + n & \quad(\text{Para $n = 0$})
+\end{align*}
+Logo, $P(0)$ é verdadeiro. \\
+Passo indutivo: para um certo $k \in \mathbb{N}, P(k):= \sum\limits_{i = 0}^{k}2i = k^2 + k$ (Hipótese Indutiva). \\
+(Provemos que $P(k + 1) = (k + 1)^2 + (k + 1)$). \\
+Então, temos:
+\begin{align*}
+	\sum\limits_{i=0}^{k + 1}2i & = (\sum\limits_{i = 0}^{k}2i) + 2(k + 1) & \quad(\text{Por def. rec. de Somatório}) \\
+	                            & = (k^2 + k) + 2(k + 1)                   & \quad(\text{Por H.I})                    \\
+	                            & = k^2 + k + 2k + 2                       & \quad(\text{Por arit.})                  \\
+	                            & = k^2 + 3k + 2                           & \quad(\text{Por arit.})                  \\
+	                            & = (k + 1)^2 + (k + 1)                    & \quad(\text{Por arit.})
+\end{align*}
+Logo, $P(k + 1)$ é verdadeiro e a proposição inicial é verdadeira.

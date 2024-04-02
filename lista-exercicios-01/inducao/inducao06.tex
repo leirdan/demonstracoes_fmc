@@ -2,37 +2,35 @@ Demonstre que $\forall n \in \mathbb{N}$:
 \begin{displaymath}
 	\sum\limits_{i = 1}^n i(\frac{1}{2})^{i - 1} = 4 - \frac{n + 2}{2^n - 1}
 \end{displaymath}
-\emph{Resolução}.
-\begin{enumerate}
-	\item Indução sobre $n$.
-	\item Seja $n \in \mathbb{N}, P(n) := \sum\limits_{i = 0}^n i(\frac{1}{2})^{i - 1} = 4 - \frac{n + 2}{2^{n - 1}}$.
-	\item Passo-base: $n = 0$:
-	\begin{align*}
-		\sum\limits_{i = 0}^0 i(\frac{1}{2})^{i - 1} &= 0 \cdot (\frac{1}{2})^{0 - 1} &\quad \text{(Por def. base de $\sum$)} \\
-		&= 0 &\quad \text{(Por $x \cdot 0 = 0$)} \\
-		&= 4 - 4 &\quad \text{(Por reescrita de 0)} \\
-		&= 4 - \frac{2}{\frac{1}{2}} &\quad \text{(Por reescrita de 4)} \\
-		&= 4 - \frac{0 + 2}{2^{-1}} &\quad \text{(Por reescrita de $\frac{1}{2}$)} \\
-		&= 4 - \frac{n + 2}{2^{n - 1}} &\quad \text{(Para $n = 0$)}
-	\end{align*}
-	Logo, $P(0)$ é verdadeiro.
-	\item Para um certo $k \in \mathbb{N}, P(k) := \sum\limits_{i = 0}^k i(\frac{1}{2})^{i - 1} = 4 - \frac{k + 2}{2^{k - 1}}$ (Hipótese Indutiva). \\
-	(Provemos que $P(k + 1) = 4 - \frac{k + 3}{2^{(k + 1) - 1}}$). \\
-	\item Então, temos:
-	\begin{align*}
-		\sum\limits_{i = 0}^{k + 1} i(\frac{1}{2})^{i - 1} &= \sum\limits_{i = 0}^k i(\frac{1}{2})^{i - 1} + (k + 1)\cdot(\frac{1}{2})^k &\quad \text{(Por def. rec. de $\sum$)} \\
-		&= 4 - \frac{k + 2}{2^{k - 1}} + (k + 1) \cdot(\frac{1}{2})^k &\quad \text{(Por H.I)} \\
-		&= 4 - \frac{k + 2}{2^{k - 1}} + \frac{k + 1}{2^k} &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{k + 1}{2^k} &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{\frac{k + 1}{2}}{\frac{2^k}{2}} &\quad \text{(Por divisão de $2$ em $\frac{k + 1}{2^k}$)} \\
-		&= 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{\frac{k + 1}{2}}{2^{k - 1}} &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{-k - 2 + \frac{k + 1}{2}}{2^{k - 1}}) &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{\frac{-2k - 4 + k + 1}{2}}{2^{k - 1}}) &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{\frac{-2k - 4 + k + 1}{2}}{\frac{2^k}{2}}) &\quad \text{(Para $2^{k - 1} = \frac{2^k}{2}$)} \\
-		&= 4 + (\frac{-2k - 4 + k + 1}{2^k}) &\quad \text{(Por arit.)} \\
-		&= 4 + (\frac{-k - 3}{2^k}) &\quad \text{(Por arit.)} \\
-		&= 4 - \frac{k + 3}{2^k} &\quad \text{(Por arit.)} \\
-		&= 4 - \frac{k + 3}{2^{k + 1 - 1}} &\quad \text{(Para $2^k = 2^{k + 1 - 1}$)} \\
-	\end{align*}
-	Logo, $P(k + 1)$ é verdadeiro.
-\end{enumerate}
+\emph{Resolução}. \\
+Aplicaremos Indução sobre $n$. \\
+Seja $P(n) := \sum\limits_{i = 0}^n i(\frac{1}{2})^{i - 1} = 4 - \frac{n + 2}{2^{n - 1}}$. \\
+Passo-base: $n = 0$
+\begin{align*}
+	\sum\limits_{i = 0}^0 i(\frac{1}{2})^{i - 1} & = 0 \cdot (\frac{1}{2})^{0 - 1} & \quad \text{(Por def. base de $\sum$)}        \\
+	                                             & = 0                             & \quad \text{(Por $x \cdot 0 = 0$)}            \\
+	                                             & = 4 - 4                         & \quad \text{(Por reescrita de 0)}             \\
+	                                             & = 4 - \frac{2}{\frac{1}{2}}     & \quad \text{(Por reescrita de 4)}             \\
+	                                             & = 4 - \frac{0 + 2}{2^{-1}}      & \quad \text{(Por reescrita de $\frac{1}{2}$)} \\
+	                                             & = 4 - \frac{n + 2}{2^{n - 1}}   & \quad \text{(Para $n = 0$)}
+\end{align*}
+Logo, $P(0)$ é verdadeiro. \\
+Para um certo $k \in \mathbb{N}, P(k) := \sum\limits_{i = 0}^k i(\frac{1}{2})^{i - 1} = 4 - \frac{k + 2}{2^{k - 1}}$ (Hipótese Indutiva). \\
+(Provemos que $P(k + 1) = 4 - \frac{k + 3}{2^{(k + 1) - 1}}$). \\
+Então, temos:
+\begin{align*}
+	\sum\limits_{i = 0}^{k + 1} i(\frac{1}{2})^{i - 1} & = \sum\limits_{i = 0}^k i(\frac{1}{2})^{i - 1} + (k + 1)\cdot(\frac{1}{2})^k & \quad \text{(Por def. rec. de $\sum$)}                   \\
+	                                                   & = 4 - \frac{k + 2}{2^{k - 1}} + (k + 1) \cdot(\frac{1}{2})^k                 & \quad \text{(Por H.I)}                                   \\
+	                                                   & = 4 - \frac{k + 2}{2^{k - 1}} + \frac{k + 1}{2^k}                            & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{k + 1}{2^k}                         & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{\frac{k + 1}{2}}{\frac{2^k}{2}}     & \quad \text{(Por divisão de $2$ em $\frac{k + 1}{2^k}$)} \\
+	                                                   & = 4 + (\frac{-k - 2}{2^{k - 1}}) + \frac{\frac{k + 1}{2}}{2^{k - 1}}         & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{-k - 2 + \frac{k + 1}{2}}{2^{k - 1}})                           & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{\frac{-2k - 4 + k + 1}{2}}{2^{k - 1}})                          & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{\frac{-2k - 4 + k + 1}{2}}{\frac{2^k}{2}})                      & \quad \text{(Para $2^{k - 1} = \frac{2^k}{2}$)}          \\
+	                                                   & = 4 + (\frac{-2k - 4 + k + 1}{2^k})                                          & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 + (\frac{-k - 3}{2^k})                                                   & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 - \frac{k + 3}{2^k}                                                      & \quad \text{(Por arit.)}                                 \\
+	                                                   & = 4 - \frac{k + 3}{2^{k + 1 - 1}}                                            & \quad \text{(Para $2^k = 2^{k + 1 - 1}$)}                \\
+\end{align*}
+Logo, $P(k + 1)$ é verdadeiro e a proposição inicial é verdadeira.

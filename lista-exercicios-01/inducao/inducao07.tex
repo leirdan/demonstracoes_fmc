@@ -1,0 +1,27 @@
+Demonstre que $\forall n \in \mathbb{N}$:
+\begin{displaymath}
+	\sum\limits_{i=1}^n (1 - \frac{1}{i + 1} = \frac{1}{n + 1})
+\end{displaymath}
+\emph{Resolução.} 
+\begin{enumerate}
+	\item Indução sobre $n$.
+	\item Seja $n \in \mathbb{N}, P(n) :=  \sum\limits_{i=1}^n (1 - \frac{1}{i + 1} = \frac{1}{n + 1})$.
+	\item Passo-base: $n = 0$
+	\begin{align*}
+		\sum\limits_{i=0}^0 (1 - \frac{1}{i + 1}) &= 1 - \frac{1}{0 + 1} &\quad \text{(por def. rec. de $\sum$)} \\
+		&= 1 - \frac{1}{1} &\quad \text{(por arit.)} \\
+		&= 0 &\quad \text{(por arit.)} \\
+		&= 1 - 1 &\quad \text{(por reescrita de 0)} \\
+		&= 1 - \frac{1}{0 + 1} &\quad \text{(por reescrita de 1)} \\
+		&= 1 - \frac{1}{n + 1} &\quad \text{(para $n = 0$)}
+	\end{align*}
+	Logo, $P(0)$ é verdadeiro.
+	\item Para um certo $k \in \mathbb{N}, P(k) := \sum\limits_{i=1}^k (1 - \frac{1}{i + 1}) = \frac{1}{k + 1}$ (Hipótese Indutiva). \\
+	(Provemos que $P(k + 1) = \frac{1}{k + 2}$)
+	\item Portanto, temos:
+	\begin{align*}
+		P(k + 1) &= \sum\limits_{i=1}^{k + 1} (1 - \frac{1}{i + 1}) \\
+		&= (\sum\limits_{i=1}^{k} (1 - \frac{1}{i + 1})) + (1 - \frac{1}{(k + 1) + 1}) &\quad \text{(Por def. rec. de $\sum$)} \\
+		&= \frac{1}{k + 1} + (1 - \frac{1}{k + 2}) &\quad \text{(Por H.I)}
+	\end{align*}
+\end{enumerate}
