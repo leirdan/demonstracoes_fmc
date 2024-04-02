@@ -10,9 +10,13 @@ Passo base: $n = 0$
 	     & = (x \cdot y) + (x \cdot 0) & \quad \text{(Por M1)}
 \end{align*}
 Logo, $P(0)$ é verdadeiro. \\
-Passo indutivo: Seja um certo $k \in \mathbb{N}, \forall x,y \in \mathbb{N}, x \cdot (y + k) = (x \cdot y) + (x \cdot k)$ (Hipótese Indutiva). \\
-(Provemos que $P(Suc(k)) = (x \cdot y) + (x \cdot Suc(k))$.) \\
-Então, temos:
+Passo indutivo: \\
+Seja um certo $k \in \mathbb{N}$ tal que
+\begin{displaymath}
+	\forall x,y \in \mathbb{N}, x \cdot (y + k) = (x \cdot y) + (x \cdot k) \quad \text{(Hipótese Indutiva)}
+\end{displaymath}
+(Provemos que $P(Suc(k)):= x \cdot (y + Suc(k)) = (x \cdot y) + (x \cdot Suc(k))$) \\
+Logo:
 \begin{align*}
 	P(Suc(k)) & = x \cdot (y + Suc(k))                                   \\
 	          & = x \cdot Suc(y + k)             & \quad \text{(Por A2)} \\
@@ -20,4 +24,4 @@ Então, temos:
 	          & = (x \cdot y) + (x \cdot k) + x  & \quad \text{(Por HI)} \\
 	          & = (x \cdot y) + (x \cdot Suc(k)) & \quad \text{(Por M2)} \\
 \end{align*}
-Logo, $P(Suc(k))$ é verdadeiro e o teorema é válido.
+Portanto, $P(Suc(k))$ é verdadeiro e o teorema é válido.

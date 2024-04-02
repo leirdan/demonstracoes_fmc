@@ -11,9 +11,12 @@ Passo base: $n = 0$
 \end{align*}
 Logo, $P(0)$ é verdadeiro. \\
 Passo indutivo: \\
-Seja um certo $k \in \mathbb{N}, x \cdot (y \cdot k) = (x \cdot y) \cdot k$ (Hipótese Indutiva). \\
-(Provemos que $P(Suc(k)) := (x \cdot y) \cdot Suc(k) = x \cdot (y \cdot Suc(k)))$. \\
-Então, temos:
+Seja um certo $k \in \mathbb{N}$ tal que
+\begin{displaymath}
+    \forall x, y \in \mathbb{N}, x \cdot (y \cdot k) = (x \cdot y) \cdot k \quad \text{(Hipótese Indutiva)}
+\end{displaymath}
+(Provemos que $P(Suc(k)) := (x \cdot y) \cdot Suc(k) = x \cdot (y \cdot Suc(k)))$ \\
+Logo:
 \begin{align*}
     P(Suc(k)) & = (x \cdot y) \cdot Suc(k)                                           \\
               & =(x \cdot y) \cdot k + (x \cdot y)  & \quad \text{(Por M2)}          \\
