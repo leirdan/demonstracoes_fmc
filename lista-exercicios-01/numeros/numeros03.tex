@@ -1,0 +1,19 @@
+Demonstre que $\forall x, y, z \in \mathbb{N}$, se $(x + z) = (y + z)$ então $x = y$. \\
+\emph{Resolução.} \\
+Aplicando indução sobre $z$. \\
+Seja $P(n): =\forall x, y \in \mathbb{N}, (x + n) = (y + n) \implies x = y$. \\
+Passo base: $n = 0$
+\begin{align*}
+    P(0):= x + n = y + n & \implies x + 0 = y + 0 & \quad \text{(Para $n = 0$)} \\ & \implies
+    x = y                & \quad \text{(Por A1)}
+\end{align*}
+Logo, $P(0)$ é verdadeiro. \\
+Passo indutivo: \\ Seja um certo $k \in \mathbb{N}$ tal que $(x + k) = (y + k) \implies x = y$ (Hipótese Indutiva). \\
+(Provemos que $(x + Suc(k)) = (y + Suc(k)) \implies x = y$.) \\
+Logo,
+\begin{align*}
+    P(Suc(k)) := x + Suc(k) = y + Suc(k) & \implies Suc(x + k) = Suc(y + k) & \quad \text{(Por A2)} \\ &\implies
+    x + k = y + k                        & \quad \text{(Por S2)}                                    \\ & \implies
+    x = y                                & \quad \text{(Por H.I)}
+\end{align*}
+Logo, $P(Suc(k))$ é verdadeiro e o teorema é válido.
