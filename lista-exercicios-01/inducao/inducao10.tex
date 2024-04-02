@@ -3,7 +3,7 @@ Demonstre que $\forall n \in \mathbb{N}^*$:
 	\sum\limits_{i=1}^n \frac{1}{(2i - 1) (2i + 1)} = \frac{n}{2n + 1}
 \end{displaymath}
 \emph{Resolução.} \\
-Aplicaremos indução sobre $n$. \\
+Aplicando indução sobre $n$. \\
 Seja $P(n) := \sum\limits_{i=1}^n \frac{1}{(2i - 1) (2i + 1)} = \frac{n}{2n + 1}$. \\
 Passo base: $n = 1$
 \begin{align*}
@@ -15,16 +15,21 @@ Passo base: $n = 1$
 	 & = \frac{n}{2 \cdot n + 1}               & \quad \text{(Para $n = 1$)}
 \end{align*}
 Logo, $P(1)$ é verdadeiro. \\
-Passo indutivo: Para um certo $k \in \mathbb{N}^*, P(k) := \sum\limits_{i = 1}^k \frac{1}{(2i - 1) (2i + 1)} = \frac{k}{2k + 1}$ (Hipótese Indutiva). \\
+Passo indutivo: \\
+Seja um certo $k \in \mathbb{N}^*$ tal que
+\begin{displaymath}
+	P(k) := \sum\limits_{i = 1}^k \frac{1}{(2i - 1) (2i + 1)} = \frac{k}{2k + 1} \quad \text{(Hipótese Indutiva)}
+\end{displaymath}
 (Provemos que $P(k + 1) = \frac{k + 1}{2k + 3}$.) \\
-Então, temos:
+Logo:
 \begin{align*}
 	\sum\limits_{i=1}^{k + 1} \frac{1}{(2i - 1) (2i + 1)}
-	 & =	(\sum\limits_{i=1}^{k} \frac{1}{(2i - 1) (2i + 1)}) + (\frac{1}{(2 \cdot (k + 1) - 1) (2 \cdot (k + 1) + 1)}) \\
-	 & =	\frac{k}{2k + 1} + (\frac{1}{(2k + 1) (2k + 3)})                                                              \\
-	 & =	\frac{(2k + 3) \cdot k}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                              \\
-	 & =	\frac{2k^2 + 3k + 1}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                                 \\
-	 & = 	\frac{(2k + 1) \cdot (k + 1)}{(2k + 1) (2k + 3)}                                                             \\
-	 & = 	\frac{k + 1}{2k + 3}                                                                                         \\
+	 & =	(\sum\limits_{i=1}^{k} \frac{1}{(2i - 1) (2i + 1)}) + (\frac{1}{(2 \cdot (k + 1) - 1) (2 \cdot (k + 1) + 1)}) \\ & \quad \text{(Por def. rec. de $\sum$)}\\
+	 & =	\frac{k}{2k + 1} + (\frac{1}{(2k + 1) (2k + 3)})                                                              \\ & \quad \text{(Por H.I)} \\
+	 & =	\frac{(2k + 3) \cdot k}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                              \\ & \quad \text{(Por aritmética)} \\
+	 & =	\frac{2k^2 + 3k + 1}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                                 \\ & \quad \text{(Por aritmética)}                                \\
+	 & = 	\frac{(2k + 1) \cdot (k + 1)}{(2k + 1) (2k + 3)}                                                             \\ & \quad \text{(Por aritmética)} \\
+	 & = 	\frac{k + 1}{2k + 3}                                                                                         \\ & \quad \text{(Por aritmética)}
 \end{align*}
-Logo, $P(k + 1)$ é verdadeiro e a proposição inicial é verdadeira.
+Logo, $P(k + 1)$ é verdadeiro.
+Portanto, a proposição inicial é verdadeira.

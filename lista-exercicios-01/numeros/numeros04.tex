@@ -1,7 +1,7 @@
 Demonstre que $\forall x, y, z \in \mathbb{N}, x \cdot (y \cdot z) = (x \cdot y) \cdot z$. \\
 \emph{Resolução.} \\
 Aplicando indução sobre $z$. \\
-Seja $P(n) := x \cdot (y \cdot n) = (x \cdot y) \cdot n$. \\
+Seja $P(n) := \forall x, y \in \mathbb{N}, x \cdot (y \cdot n) = (x \cdot y) \cdot n$. \\
 Passo base: $n = 0$
 \begin{align*}
     P(0) & = (x \cdot y) \cdot 0                         \\
@@ -21,7 +21,7 @@ Logo:
     P(Suc(k)) & = (x \cdot y) \cdot Suc(k)                                           \\
               & =(x \cdot y) \cdot k + (x \cdot y)  & \quad \text{(Por M2)}          \\
               & = x \cdot (y \cdot k) + (x \cdot y) & \quad \text{(Por H.I)}         \\
-              & = x \cdot (y \cdot k + y)           & \quad \text{(Pelo teorema Q5)} \\
+              & = x \cdot ((y \cdot k) + y)         & \quad \text{(Pelo teorema Q5)} \\
               & = x \cdot (y \cdot Suc(k))          & \quad \text{(Por M2)}
 \end{align*}
 Portanto, $P(Suc(k))$ é verdadeiro e o teorema é válido.
