@@ -1,0 +1,16 @@
+Demonstre que $\forall a, b \in \mathbb{N}$, Se $a |b$ então $\frac{b}{a} | b$. \\
+\emph{Resolução.} \\
+Seja $a, b \in \mathbb{N}$, com $a > 0$. \\
+Temos que $a | b$, ou seja, $\exists w_1 \in \mathbb{N}$ tal que $a \cdot w_1 = b$. \\
+Note que, por aritmética:
+\begin{displaymath}
+    a \cdot w_1 = b \implies w_1 = \frac{b}{a}
+\end{displaymath}
+$w_1 \in \mathbb{N}$ por definição. \\
+Logo:
+\begin{align*}
+    a \cdot w_1 = b           & \implies a \cdot \frac{b}{a} = b & \quad \text{(Por reescrita de $w_1$)} \\ & \implies
+    w_2 \cdot \frac{b}{a} = b & \quad \text{(Para $w_2 = a$)}
+\end{align*}
+Logo, $\exists w_2 \in \mathbb{N}$ tal que $w_2 \cdot \frac{b}{a} = b$. \\
+Portanto, o teorema é válido.
