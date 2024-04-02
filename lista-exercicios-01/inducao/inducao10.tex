@@ -1,19 +1,30 @@
-Demonstre que $\forall n \in \mathbb{N}$:
+Demonstre que $\forall n \in \mathbb{N}^*$:
 \begin{displaymath}
 	\sum\limits_{i=1}^n \frac{1}{(2i - 1) (2i + 1)} = \frac{n}{2n + 1}
 \end{displaymath}
-\emph{Resolução.}
-\begin{enumerate}
-	\item Aplicaremos indução sobre $n$.
-	\item Seja $\forall n \in \mathbb{N}, P(n) := \sum\limits_{i=1}^n \frac{1}{(2i - 1) (2i + 1)} = \frac{n}{2n + 1}$.
-	\item Passo-base: $n = 1$
-	\begin{align*}
-		\sum\limits_{i=1}^1 \frac{1}{(2i - 1) (2i + 1)} 
-		&= \frac{1}{(2\cdot1 - 1) (2\cdot1 + 1)} &\quad \text{(Por def. base de $\sum$)} \\
-		&= \frac{1}{1 \cdot 3} &\quad \text{(Por arit.)} \\
-		&= \frac{1}{2 + 1} &\quad \text{(Por reescrita de 3)} \\
-		&= \frac{1}{2 \cdot 1 + 1} &\quad \text{(Por reescrita de 2)} \\
-		&= \frac{n}{2 \cdot n + 1} &\quad \text{(Para $n = 1$)}
-	\end{align*}
-	Logo, $P(1)$ é verdadeiro.
-\end{enumerate}
+\emph{Resolução.} \\
+Aplicaremos indução sobre $n$. \\
+Seja $P(n) := \sum\limits_{i=1}^n \frac{1}{(2i - 1) (2i + 1)} = \frac{n}{2n + 1}$. \\
+Passo base: $n = 1$
+\begin{align*}
+	\sum\limits_{i=1}^1 \frac{1}{(2i - 1) (2i + 1)}
+	 & = \frac{1}{(2\cdot1 - 1) (2\cdot1 + 1)} & \quad \text{(Por def. base de $\sum$)} \\
+	 & = \frac{1}{1 \cdot 3}                   & \quad \text{(Por arit.)}               \\
+	 & = \frac{1}{2 + 1}                       & \quad \text{(Por reescrita de 3)}      \\
+	 & = \frac{1}{2 \cdot 1 + 1}               & \quad \text{(Por reescrita de 2)}      \\
+	 & = \frac{n}{2 \cdot n + 1}               & \quad \text{(Para $n = 1$)}
+\end{align*}
+Logo, $P(1)$ é verdadeiro. \\
+Passo indutivo: Para um certo $k \in \mathbb{N}^*, P(k) := \sum\limits_{i = 1}^k \frac{1}{(2i - 1) (2i + 1)} = \frac{k}{2k + 1}$ (Hipótese Indutiva). \\
+(Provemos que $P(k + 1) = \frac{k + 1}{2k + 3}$.) \\
+Então, temos:
+\begin{align*}
+	\sum\limits_{i=1}^{k + 1} \frac{1}{(2i - 1) (2i + 1)}
+	 & =	(\sum\limits_{i=1}^{k} \frac{1}{(2i - 1) (2i + 1)}) + (\frac{1}{(2 \cdot (k + 1) - 1) (2 \cdot (k + 1) + 1)}) \\
+	 & =	\frac{k}{2k + 1} + (\frac{1}{(2k + 1) (2k + 3)})                                                              \\
+	 & =	\frac{(2k + 3) \cdot k}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                              \\
+	 & =	\frac{2k^2 + 3k + 1}{(2k + 3) \cdot (2k + 1)} + (\frac{1}{(2k + 1) (2k + 3)})                                 \\
+	 & = 	\frac{(2k + 1) \cdot (k + 1)}{(2k + 1) (2k + 3)}                                                             \\
+	 & = 	\frac{k + 1}{2k + 3}                                                                                         \\
+\end{align*}
+Logo, $P(k + 1)$ é verdadeiro e a proposição inicial é verdadeira.
