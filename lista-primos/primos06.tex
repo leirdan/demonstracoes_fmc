@@ -1,0 +1,15 @@
+Demonstre que para qualquer inteiro $n$, se $n mod 7 = 2$, então $n^2 mod 7 = 2$. \\
+\emph{Resolução.} \\
+Tome $n = 9$. Note que
+\begin{align*}
+	9\mod 7 & = 9 - ((\frac{9}{7}) \cdot 7) & \quad \text{(Por def. de mod)} \\
+	        & = 9 - 7                       & \quad \text{(Por aritmética})  \\
+	        & = 2
+\end{align*}
+Mas, tomando $n^2 = 9^2 = 81$, temos:
+\begin{align*}
+	81\mod 7 & = 81 - ((\frac{81}{7} \cdot 7) & \quad \text{(Por def. de mod)} \\
+	         & = 81 - 77                      & \quad \text{(Por aritmética})  \\
+	         & = 4
+\end{align*}
+Portanto, a proposição é falsa.
