@@ -1,0 +1,18 @@
+Demonstre que para quaisquer inteiros $a, b, c, (mdc(a, c) = 1 \land a | bc) \implies a | b$. \\
+\emph{Resolução.} \\
+Sejam $a, b, c \in \mathbb{Z}$ arbitrários. \\
+Assuma $mdc(a, c) = 1$. Logo, pelo teorema de Bezout, temos que $\exists s, t \in \mathbb{Z}, mdc(a, c) = (a \cdot s) + (c \cdot t).$ \\
+Assuma $a | bc$, ou seja, $\exists w_1 \in \mathbb{Z}, a \cdot w_1 = bc$. \\
+(Provemos que $\exists w_2 \in \mathbb{Z}, a \cdot w_2 = b$) \\
+Note que:
+\begin{align*}
+	mdc(a, c) = 1 & \implies (a \cdot s) + (c \cdot t) = 1 &\quad \text{(Por reescrita de $mdc$)} \\
+	&\implies (a \cdot s) + (c \cdot t) \cdot b = b &\quad \text{(Por multiplicação de $b$)} \\
+	&\implies (a \cdot s \cdot b) + (c \cdot t \cdot b) = b &\quad \text{(Por distributividade)} \\
+	&\implies (a \cdot s \cdot b) + (t \cdot c \cdot b) = b &\quad \text{(Por comutatividade)} \\
+	&\implies (a \cdot s \cdot b) + (t \cdot (w_1 \cdot a)) = b &\quad \text{(Por reescrita de $bc$)} \\
+	&\implies a \cdot (s \cdot b) + (t \cdot w_1) = b &\quad \text{(Por reescrita)} \\
+	&\implies a \cdot w_2 = b &\quad \text{(Para $w_2 = (s \cdot b) + (t \cdot w_1)$)} \\
+\end{align*}
+Note que $w_2 \in \mathbb{Z}$ pois as operações realizadas são fechadas sobre os inteiros. \\
+Portanto, a proposição é válida.
