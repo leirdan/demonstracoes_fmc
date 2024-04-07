@@ -1,0 +1,15 @@
+Demonstre o Lema de Euclides: sejam $a, b, p \in \mathbb{Z}$ com $p$ primo; se $p | ab$, então $p | a$ ou $p | b$ (note que é possível que $p$ divida tanto $a$ quanto $b$). \\
+\emph{Demonstração.} \\
+Sejam $a, b, p \in \mathbb{Z}$, onde $p$ é primo. \\
+\textbf{(1)} Assuma $p | ab$. \\
+Suponha $p \nmid a$. Logo, \textbf{(2)} $mdc(a, p) = 1$. \\
+\textbf{(3)} Note que $\exists s, t \in \mathbb{Z}; mdc(a, p) = sa + tp$, pelo Teorema de Bezout. \\
+\textbf{(4)} Note que $sa + tp = 1$, por \textbf{(3)} e \textbf{(2)}. \\
+\textbf{(5)} Note também que $p | p$, logo $p | p \cdot (bt)$ por propriedade de divisibilidade. \\
+\textbf{(6)} Note também que $p | ab$, logo $p | ab \cdot (s)$ por propriedade de divisibilidade. \\
+\textbf{(7)} Dessa forma, temos que
+\begin{align*}
+    p | ((p \cdot bt) + (ab \cdot s)) & = p | b \cdot (sa + tp) & \quad \text{(Por aritmética)}   \\
+                                      & = p | b                 & \quad \text{(Por \textbf{(4)})}
+\end{align*}
+\textbf{(8)} Portanto, $p | b$ e o lema é válido.
