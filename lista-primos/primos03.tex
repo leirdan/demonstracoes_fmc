@@ -1,0 +1,20 @@
+Mostre que se $n$ é um inteiro composto qualquer ele possui um divisor primo menor ou igual a $\sqrt{n}$. \\
+\emph{Demonstração.} \\
+Seja $n$ um inteiro composto arbitrário. \\
+Logo, \textbf{(1)} pelo Teorema Fundamental da Aritmética, $\exists a, b \in \mathbb{Z}, n = a\cdot b$, com $a, b > 1$. \\
+\textbf{(2)} Note que, aplicando a definição de divisibilidade em \textbf{(1)}, temos que $a | n$. \\
+\textbf{(3)} Suponha que $a \leq b$. \\
+Note que:
+\begin{align*}
+    a \leq b                 & \implies a \leq \frac{n}{a}   & \quad \text{(Para $b = \frac{n}{a}$)} \\ &\implies
+    a^2 \leq n               & \quad \text{(Por aritmética)}                                         \\ &\implies
+    \sqrt{a^2} \leq \sqrt{n} & \quad \text{(Por aritmética)}                                         \\ &\implies
+    a \leq \sqrt{n}          & \quad \text{(Por aritmética)}                                         \\
+\end{align*}
+\textbf{(4)} Logo, $a \leq \sqrt{n}$.\\
+Assim, temos dois casos para $a$:
+\begin{itemize}
+    \item $a$ é primo. Nesse caso, $a$ não é decomposto em outros fatores e é imediato que $a$ é divisor primo de $n$ tal que $a \leq \sqrt{n}$ por \textbf{(4)} e \textbf{(2)}.
+    \item $a$ é composto. Nesse caso, pelo Teorema Fundamental da Aritmética, temos que $a$ é resultado de um produto de números primos, onde um desses é um inteiro primo $p$. Aplicando a def. de divisibilidade, temos que $\exists p_0 \in \mathbb{Z}, p \cdot p_0 = a \iff p | a$. Assim, se $p | a$ e $a | n$ por \textbf{(2)}, então $p | n$ pela transitividade da divisão. Note ainda que $p \leq a \leq \sqrt{n} \implies p \leq \sqrt{n}$ por \textbf{(4)}.
+\end{itemize}
+\textbf{(5)} Portanto, está mostrado que existe sempre um divisor primo de um natural qualquer menor ou igual à raiz quadrada deste natural.
