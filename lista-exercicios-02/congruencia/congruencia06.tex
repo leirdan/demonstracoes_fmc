@@ -12,17 +12,17 @@ mdc(150, 63):
 Portanto, $mdc(150, 63) = 3$. \\
 Note que, pela regra do cancelamento geral, temos:
 \begin{align*}
-	63x \equiv 30 \pmod{150} \implies 21x * 3 \equiv 10 * 3 \pmod {150} \iff 21x \equiv 10 \pmod{\frac{150}{3}}
+	63x \equiv 30 \pmod{150} &\implies 21x * 3 \equiv 10 * 3 \pmod {150} &\iff 21x \equiv 10 \pmod{\frac{150}{3}}
 \end{align*}
 Logo, temos que resolver $21x \equiv 10 \pmod{\frac{150}{3}}$. \\
 Verifiquemos:
 \begin{align*}
 mdc(50, 21):
-	50 &= 2 \cdot 21 + 8 &\quad (8 = 50 - 2 \cdot 21)
-	21 &= 2 \cdot 8 + 5 &\quad (5 = 21 - 2 \cdot 8)
-	8 &= 1 \cdot 5 + 3 &\quad (3 = 8 - 1 \cdot 5)
-	5 &= 1 \cdot 3 + 2 &\quad (2 = 5 - 1 \cdot 3)
-	3 &= 1 \cdot 2 + 1 &\quad (1 = 3 - 1 \cdot 2)
+	50 &= 2 \cdot 21 + 8 &\quad (8 = 50 - 2 \cdot 21) \\
+	21 &= 2 \cdot 8 + 5 &\quad (5 = 21 - 2 \cdot 8) \\
+	8 &= 1 \cdot 5 + 3 &\quad (3 = 8 - 1 \cdot 5) \\
+	5 &= 1 \cdot 3 + 2 &\quad (2 = 5 - 1 \cdot 3) \\
+	3 &= 1 \cdot 2 + 1 &\quad (1 = 3 - 1 \cdot 2) \\
 	2 &= 1 \cdot 2 + 0
 \end{align*}
 Portanto, $mdc(50, 21) = 1$. \\
@@ -43,10 +43,10 @@ Assim, vamos encontrar o inverso de 21 módulo 50:
 Como $-19 \equiv 31 \pmod{50}$, temos que o inverso modular de 21 é 31. \\
 Agora, note que:
 \begin{align*}
-	31 \cdot 21x \equiv 10 \cdot 31 \pmod{50} &\implies \\
-	651x \equiv 310 \pmod{50} &\implies \\
-	x \equiv 10 \pmod{50} \quad (651 \equiv 1 \pmod{50}) &\implies \\
-	x = 50 \cdot t + 10 \quad \text{(Por def.)}
+	&31 \cdot 21x \equiv 10 \cdot 31 \pmod{50} \\ \implies 
+	&651x \equiv 310 \pmod{50} \\ \implies 
+	&x \equiv 10 \pmod{50} \quad \text{pois $(651 \equiv 1 \pmod{50})$} \\ &\implies
+	&x = 50 \cdot t + 10 \quad \text{(Por def.)}
 \end{align*}
 para $0 \leq t \leq 2$. \\
 Portanto, as 3 possíveis soluções para a congruência linear são $x = 10, x = 60, x= 110$.
