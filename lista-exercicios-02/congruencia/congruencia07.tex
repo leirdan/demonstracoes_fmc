@@ -2,3 +2,42 @@ Qual o menor valor positivo que satisfaz esta congruência linear?
 \begin{displaymath}
 	81x \equiv 12 \pmod{264}
 \end{displaymath}
+\emph{Resolução}. \\
+Verifiquemos:
+\begin{align*}
+	mdc(264, 81): 264 &= 3 \cdot 81 + 21 &\quad (21 = 264 - 3 \cdot 81) \\
+	81 &= 3 \cdot 21 + 18 &\quad (18 = 81 - 3 \cdot 21) \\
+	21 &= 1 \cdot 18 + 3 &\quad (3 = 21 - 18) \\
+	18 &= 6 \cdot 3 + 0 
+\end{align*}
+Logo, $mdc(264, 81) = 3$. \\
+Pela regra do cancelamento geral, temos que:
+\begin{align*}
+	81x \equiv 12 \pmod{264} \implies 27x \cdot 3 \equiv 4 \cdot 3 \pmod{264} \iff 27x \equiv 4 \pmod{\frac{264}{3}}
+\end{align*}
+Verifiquemos novamente o mdc entre 27 e 88:
+\begin{align*}
+	mdc(88, 27): 88 &= 3 \cdot 27 + 7 &\quad (7 = 88 - 3 \cdot 27) \\
+	27 &= 3 \cdot 7 + 6 &\quad (6 = 27 - 3 \cdot 7) \\
+	7 &= 1 \cdot 6 + 1 &\quad (1 = 7 - 6) \\
+	6 &= 6 \cdot 1 + 0
+\end{align*}
+Logo, $mdc(88, 27) = 1$. \\
+Assim, podemos calcular o inverso de 27 módulo 88 pelo algoritmo extendido de Euclides:
+\begin{align*}
+	1 &= 7 - 6 \\
+	&= 7 - (27 - 3 \cdot 7)
+	&= 7 - (27 - 3 \cdot (88 - 3 \cdot 27))
+	&= 7 - (27 - 3 \cdot 88 + 9 \cdot 27)
+	&= 88 - 3 \cdot 27 - (27 - 3 \cdot 88 + 9 \cdot 27)
+	&= 4 \cdot 88 - 13 \cdot 27
+\end{align*}
+Como $-13 \equiv 75 \pmod{88}$, temos que o inverso modular de 27 módulo 88 é 75. \\
+Agora, note que:
+\begin{align*}
+	&75 \cdot 27x \equiv 4 \cdot 75 \pmod{88} \\
+	&\implies x \equiv 300 \pmod{88} \quad \text{[pois $27 \cdot 75 \equiv 1 \pmod{88}$]} \\
+	&\implies x \equiv 300 \pmod{88} \\
+	&\implies x \equiv 36 \pmod{88} \quad \text{[pois $300 \equiv 36 \pmod{88}$]} \\
+\end{align*}
+Logo, o menor inteiro que satisfaz a congruência é 36. \\
