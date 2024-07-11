@@ -6,7 +6,7 @@ Note que:
 \end{displaymath}
 
 A princípio calculemos $(8^{10} \bmod{13})$. \\
-Note que $8^10 = 8^2 \cdot 8^4 \cdot 8^4$. Vamos calcular cada:
+Note que $8^{10} = 8^2 \cdot 8^4 \cdot 8^4$. Vamos calcular cada:
 \begin{itemize}
 	\item $8^2 \bmod{13} = 64 \bmod{13} = 12$ 
 	\item $8^4 \bmod{13} = (8^2 \bmod{13})^2 \bmod{13} = 12^2 \bmod{13} = 1$ 
@@ -30,10 +30,10 @@ Vamos calcular cada:
 		\item Pelo Pequeno Teorema de Fermat, tomando o primo 13 e o inteiro 11, sabemos que $11^{12} \equiv 1 \pmod{13}$;
 		\item Logo:
 			\begin{align*}
-				11^{256} &\equiv (11^{12})^{21} \cdot 11^4 \pmod{13}
-					&\equiv 1^{21} \cdot 11^4 \pmod{13} \quad \text{[pois $11^{12} \equiv 1 \pmod{13}$]}
-					&\equiv 11^4 \pmod{13} 
-					&\equiv 3 
+				11^{256} &\equiv (11^{12})^{21} \cdot 11^4 \pmod{13} \\
+					&\equiv 1^{21} \cdot 11^4 \pmod{13} \quad \text{[pois $11^{12} \equiv 1 \pmod{13}$]} \\
+					&\equiv 11^4 \pmod{13}  \\
+					&\equiv 3 \\
 			\end{align*}
 	\end{itemize}
 	\item $11^{1024} \bmod{13} = (11^{256} \bmod{13})^4 \bmod{13} = 3^4 \bmod{13} = 3$
