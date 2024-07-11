@@ -1,1 +1,52 @@
-Calcule $(8^10 - 128^1796) \pmod{13}$. Mostre todos os resultados intermediários. Durante o processo nenhum número com mais de 3 dígitos deve ser gerado.
+Calcule $(8^{10} - 128^{1796}) \pmod{13}$. Mostre todos os resultados intermediários. Durante o processo nenhum número com mais de 3 dígitos deve ser gerado. \\
+\emph{Resolução.} \\
+Note que:
+\begin{displaymath}
+	(8^{10} - 128^{1796}) \pmod{13} \implies (8^{10} \bmod{13}) - (128^{1796} \bmod{13}) \pmod{13}
+\end{displaymath}
+
+A princípio calculemos $(8^{10} \bmod{13})$. \\
+Note que $8^10 = 8^2 \cdot 8^4 \cdot 8^4$. Vamos calcular cada:
+\begin{itemize}
+	\item $8^2 \bmod{13} = 64 \bmod{13} = 12$ 
+	\item $8^4 \bmod{13} = (8^2 \bmod{13})^2 \bmod{13} = 12^2 \bmod{13} = 1$ 
+\end{itemize}
+Portanto:
+\begin{align*}
+	8^{10} \bmod{13} &= (8^2 \bmod{13} \cdot 8^4 \bmod{13} \cdot 8^4 \bmod{13}) \bmod{13} \\
+	&= (12 \cdot 1 \cdot 1) \bmod{13} \\
+	&= 12
+\end{align*}
+
+Agora calculemos $(128^{1796}) \bmod{13}$. \\
+Note que $(128 \bmod{13})^{1796} \bmod{13} = 11^{1796} \bmod{13}$. \\
+Veja que $11^{1796} = 11^{1024} \cdot 11^{256} \cdot 11^{256} \cdot 11^{256} \cdot 11^4$.
+Vamos calcular cada:
+\begin{itemize}
+	\item $11^4 \bmod{13} = (11^2 \bmod{13})^2 \bmod{13} = 4^2 \bmod{13} = 3$
+	\item $11^{256} \bmod{13}$:
+	\begin{itemize}
+		\item Note que $256 = 21 \cdot 12 + 4$;
+		\item Pelo Pequeno Teorema de Fermat, tomando o primo 13 e o inteiro 11, sabemos que $11^{12} \equiv 1 \pmod{13}$;
+		\item Logo:
+			\begin{align*}
+				11^{256} &\equiv (11^{12})^{21} \cdot 11^4 \pmod{13}
+					&\equiv 1^{21} \cdot 11^4 \pmod{13} \quad \text{[pois $11^{12} \equiv 1 \pmod{13}$]}
+					&\equiv 11^4 \pmod{13} 
+					&\equiv 3 
+			\end{align*}
+	\end{itemize}
+	\item $11^{1024} \bmod{13} = (11^{256} \bmod{13})^4 \bmod{13} = 3^4 \bmod{13} = 3$
+\end{itemize}
+
+Desse modo, temos:
+\begin{align*}
+	11^{1796} \bmod{13} = (3 \cdot 3 \cdot 3 \cdot 3 \cdot 3) \bmod{13} = 243 \bmod{13} = 9
+\end{align*}
+
+Portanto, temos a operação final:
+\begin{align*}
+	(8^{10} - 128^{1796}) \bmod{13} &= (8^{10} \bmod{13}) - (128^{1796} \bmod{13}) \bmod{13} \\
+	&= (12 - 9) \bmod{13} \\ 
+	&= 3
+\end{align*}
