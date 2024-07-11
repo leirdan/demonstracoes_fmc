@@ -1,1 +1,53 @@
-Quantas soluções inteiras existem para $x$, com $0 \leq x < 150$ para a congruência linear $63x \equiv 30 \pmod{50}$? Quais são elas?
+Quantas soluções inteiras existem para $x$, com $0 \leq x < 150$ para a congruência linear $63x \equiv 30 \pmod{150}$? Quais são elas? \\
+\emph{Resolução.} \\
+Verifiquemos o $mdc(150, 63)$:
+\begin{align*}
+mdc(150, 63): 
+	150 &= 2 \cdot 63 + 24 &\quad (24 = 63 \cdot 2 - 150) \\
+	63 &= 2 \cdot 24 + 15 &\quad (15 = 24 \cdot 2 - 63) \\
+	24 &= 1 \cdot 15 + 9 &\quad (9 = 24 - 1 \cdot 15) \\
+	15 &= 1 \cdot 9 + 6 &\quad (6 = 15 - 9) \\
+	9 &= 3 \cdot 3 + 0 
+\end{align*}
+Portanto, $mdc(150, 63) = 3$. \\
+Note que, pela regra do cancelamento geral, temos:
+\begin{align*}
+	63x \equiv 30 \pmod{150} \implies 21x * 3 \equiv 10 * 3 \pmod {150} \iff 21x \equiv 10 \pmod{\frac{150}{3}}
+\end{align*}
+Logo, temos que resolver $21x \equiv 10 \pmod{\frac{150}{3}}$. \\
+Verifiquemos:
+\begin{align*}
+mdc(50, 21):
+	50 &= 2 \cdot 21 + 8 &\quad (8 = 50 - 2 \cdot 21)
+	21 &= 2 \cdot 8 + 5 &\quad (5 = 21 - 2 \cdot 8)
+	8 &= 1 \cdot 5 + 3 &\quad (3 = 8 - 1 \cdot 5)
+	5 &= 1 \cdot 3 + 2 &\quad (2 = 5 - 1 \cdot 3)
+	3 &= 1 \cdot 2 + 1 &\quad (1 = 3 - 1 \cdot 2)
+	2 &= 1 \cdot 2 + 0
+\end{align*}
+Portanto, $mdc(50, 21) = 1$. \\
+Assim, vamos encontrar o inverso de 21 módulo 50: 
+\begin{align*}
+	1 &= 3 - 2 \\ 
+	&= 3 - (5 - 3) \\
+	&= 2 \cdot 3 - 5 \\
+	&= 2 \cdot (8 - 5) - 5 \\
+	&= 2 \cdot 8 - 3 \cdot 5 \\
+	&= 2 \cdot 8 - 3 \cdot (21 - 2 \cdot 8) \\
+	&= 2 \cdot 8 - 3 \cdot 21 + 6 \cdot 8 \\
+	&= 8 \cdot 8 - 3 \cdot 21 \\
+	&= 8 \cdot (50 - 2 \cdot 21) - 3 \cdot 21 \\
+	&= 8 \cdot 50 - 16 \cdot 21 - 3 \cdot 21 \\
+	&= 8 \cdot 50 - 19 \cdot 21
+\end{align*}
+Como $-19 \equiv 31 \pmod{50}$, temos que o inverso modular de 21 é 31. \\
+Agora, note que:
+\begin{align*}
+	31 \cdot 21x \equiv 10 \cdot 31 \pmod{50} &\implies \\
+	651x \equiv 310 \pmod{50} &\implies \\
+	x \equiv 10 \pmod{50} \quad (651 \equiv 1 \pmod{50}) &\implies \\
+	x = 50 \cdot t + 10 \quad \text{(Por def.)}
+\end{align*}
+para $0 \leq t \leq 2$. \\
+Portanto, as 3 possíveis soluções para a congruência linear são $x = 10, x = 60, x= 110$.
+
