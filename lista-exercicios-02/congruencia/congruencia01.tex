@@ -20,7 +20,28 @@ Se $a\equiv c \pmod{n}$ e $b\equiv d \pmod{n}$, então:
 		&\text{(11)} \quad n | ab - cd &\quad \text{(Por def. de divisibilidade)} \\
 	\end{align*}
 	Portanto, $ab \equiv cd \pmod{n}$ pela def. de congruência.
-	\item $a^m \equiv c^m \pmod{n}$, para qualquer $m \in \mathbb{Z}$.
+	\item $a^m \equiv c^m \pmod{n}$, para qualquer $m \in \mathbb{Z}$. \\
+	\emph{Resolução}. \\
+	Vamos demonstrar por indução em $m$. \\
+		(1) Suponha $a \equiv c \pmod{n}$. \\
+		(2) Seja $P(m) := a^m \equiv c^m \pmod{n}$. \\
+		(3) Passo base: $P(0)$.
+			\begin{align*}
+				P(0) :=& a^0 \equiv c^0 \pmod{n} \\
+				&\implies 1 \equiv 1 \pmod{n} &\quad \text{(por $x^0 = 1$)}
+			\end{align*}
+		Por reflexividade, $P(0)$ é válido. \\
+		(4) Hipótese Indutiva: seja um $k \in \mathbb{Z}$ arbitrário, tal que $P(k):= a^k \equiv c^k \pmod{n}$. Assim, $a = c + n \cdot w_0$, para $w_0 \in \mathbb{Z}$, por definição de congruência em (1). \\
+		(5) Logo: 
+		\begin{align*}
+			&\text{(6)} \quad a^k \cdot a &= (c + n \cdot w_0) \cdot a^k &\quad \text{(por reescrita)} \\ 
+			&\text{(7)} \quad &= c \cdot a^k + a^k \cdot n \cdot w_0 &\quad \text{(por distributividade)} \\
+			&\text{(8)} \quad &= c \cdot (c^k + n \cdot w_1) + (c^k + n \cdot w_1) \cdot (n \cdot w_0) &\quad \text{(por H.I)} \\
+			&\text{(9)} \quad &= cc^k + cnw_1 + c^kn + nw_1nw_0 &\quad \text{(por distributividade)} \\
+			&\text{(10)} \quad &= cc^k + n(cw_1 + c^k + w_0nw_1) &\quad \text{(por evidência)} \\
+			&\text{(11)} \quad &= cc^k + nw_2 &\quad \text{(para $w_2 = (cw_1 + c^k + w_0nw_1$))} \\
+		\end{align*}
+		Portanto, $a^{k+1} \equiv c^{k+1} \pmod{n}$.
 \end{enumerate}
 
 
