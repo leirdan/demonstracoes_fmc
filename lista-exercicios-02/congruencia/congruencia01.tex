@@ -9,15 +9,15 @@ Se $a\equiv c \pmod{n}$ e $b\equiv d \pmod{n}$, então:
 	(3) Por def., temos que $\exists k_2 \in \mathbb{Z}, k_2 \cdot n = b - d \implies b = k_2n + d$. \\
 	Assim, temos:
 	\begin{align*}
-		a = k_1n + c &\quad \text{(Por aritmética)} \\
-		ab = (k_1n + c) \cdot b &\quad \text{(Por multiplicação por $b$)} \\
-		ab = bk_1n + bc &\quad \text{(Por distributividade em 5)} \\
-		ab = (k_2n + d)k_1n + (k_2n + d)c &\quad \text{(Por substituição em $b$ por 3)} \\
-		ab = k_1nk_2n + k_1nd + k_2nc + cd &\quad \text{(Por distributividade)} \\
-		ab = n (k_1nk_2 + k_1d + k_2c) + cd &\quad \text{(Por evidência em $n$)} \\
-		ab = nk_3 + cd &\quad \text{(Para $k_3 = (k_1nk_2 + k_1d + k_2c)$)} \\
-		ab - cd = nk_3 &\quad \text{(Por aritmética)} \\
-		\implies n | ab - cd &\quad \text{(Por def. de divisibilidade)} \\
+		a &= k_1n + c &\quad \text{(Por aritmética)} \\
+		ab &= (k_1n + c) \cdot b &\quad \text{(Por multiplicação por $b$)} \\
+		ab &= bk_1n + bc &\quad \text{(Por distributividade em 5)} \\
+		ab &= (k_2n + d)k_1n + (k_2n + d)c &\quad \text{(Por substituição em $b$ por 3)} \\
+		ab &= k_1nk_2n + k_1nd + k_2nc + cd &\quad \text{(Por distributividade)} \\
+		ab &= n (k_1nk_2 + k_1d + k_2c) + cd &\quad \text{(Por evidência em $n$)} \\
+		ab &= nk_3 + cd &\quad \text{(Para $k_3 = (k_1nk_2 + k_1d + k_2c)$)} \\
+		ab - cd &= nk_3 &\quad \text{(Por aritmética)} \\
+		&\implies n | ab - cd &\quad \text{(Por def. de divisibilidade)} \\
 	\end{align*}
 	Portanto, $ab \equiv cd \pmod{n}$ pela def. de congruência.
 	\item $a^m \equiv c^m \pmod{n}$, para qualquer $m \in \mathbb{Z}$. \\
