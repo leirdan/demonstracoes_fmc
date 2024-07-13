@@ -1,0 +1,63 @@
+Após muitos conflitos políticos no Brasil em 2030, os illuminatis decidem terceirizar uma intervenção militar e contratam um general chinês, que ficou encarregado de chefiar 500 soldados brasileiros antes de uma guerra civil, como para os chineses os ocidentais são todos muito parecidos, ele tinha uma certa dificuldade em contar os brasileiros. Seguindo uma intuição ancestral, após a guerra civil, o chinês alinhou os soldados em fileiras de 6 de forma que sobraram 3. Quando ele alinhou os soldados em fileiras de 7, também sobraram 3 soldados. Por fim, alinhou em fileiras de 11 e sobraram 5. Quantos soldados o general tinha no final? \\
+\emph{Resolução}.
+Temos o seguinte sistema de congruências:
+\begin{align*}
+	&s \equiv 3 \pmod{6} \\
+	&s \equiv 3 \pmod{7} \\
+	&s \equiv 5 \pmod{11} \\
+\end{align*}
+
+Pelos fato dos módulos serem coprimos, temos $m = m_1 \cdot m_2 \cdot m_3 = 6 \cdot 7 \cdot 11 = 462$. \\
+Pelo teorema chinês dos restos, temos 
+\begin{displaymath}
+	s = s_1 \cdot M_1^{\Phi(m_1)} + s_2 \cdot M_2^{\Phi(m_2)} + s_3 \cdot M_3^{\Phi(m_3)} \pmod{m}
+\end{displaymath}
+onde $M_i = \frac{m}{m_1}$, $s_i = a_i \bmod{m_i}$ e $a_i$ é o resto em cada $m_i$. \\ 
+Assim, temos os $s$:
+\begin{itemize}
+	\item $s_1 = 3 \bmod{6} = 3$;
+	\item $s_2 = 3 \bmod{7} = 3$;
+	\item $s_3 = 5 \bmod{11} = 5$.
+\end{itemize}
+e os $M$:
+\begin{itemize}
+	\item $M_1 = \frac{462}{6} = 77$;
+	\item $M_2 = \frac{462}{7} = 66$;
+	\item $M_3 = \frac{462}{11} = 42$.
+\end{itemize}
+Logo, temos:
+\begin{align*}
+	s &\equiv s_1 \cdot M_1^{\Phi(m_1)} + s_2 \cdot M_2^{\Phi(m_2)} + s_3 \cdot M_3^{\Phi(m_3)} \pmod{m} \\
+	&\equiv 3 \cdot 77^3 + 3 \cdot 66^6 + 5 \cdot 42^{10} \pmod{462} \\
+	&\equiv (3 \cdot 77^3 \bmod{462}) + (3 \cdot 66^6 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+	&\equiv (3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+	&= (3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+\end{align*}
+Resolvamos $(66^2 \bmod{462})^3$:
+\begin{align*}
+	(66^2 \bmod{462})^3 &= (4356 \bmod{462})^3 \bmod{462} \\
+	&= 198^3 \bmod{462} \\
+	&= (198 \bmod{462}) \cdot (198^2 \bmod{462}) \bmod{462} \\
+	&= 198 \cdot (39204 \bmod{462}) \bmod{462} \\
+	&= 198 \cdot 396 \bmod{462} \\
+	&= 78408 \bmod{462} \\
+	&= 330 \\
+\end{align*}
+Resolvamos também $(42^{10} \bmod{462})$. Note que $42^{10} = 42^2 \cdot 42^4 \cdot 42^4$. Vejamos cada um deles em módulo 462:
+\begin{itemize}
+	\item $(42^2 \bmod{462}) = 1764 \bmod{462} = 378$;
+	\item $(42^4 \bmod{462}) = (42^2 \bmod{462})^2 \bmod{462} = 378^2 \bmod{462} = 142884 \bmod{462} = 126$;
+\end{itemize}
+Logo:
+\begin{displaymath}
+	42^{10} = (378 \cdot 126 \cdot 126) \bmod{462} = 6001128 \bmod{462} = 210
+\end{displaymath}
+Retomando:
+\begin{align*}
+	(3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} &= (3 \cdot 77 \cdot 385 \bmod{462}) + (3 \cdot 330 \bmod{462}) + (5 \cdot 210) \pmod{462} \\ 
+	&\equiv (88935 \bmod{462}) + (990 \bmod{462}) + (1050 \bmod{462}) \pmod{462} \\ 
+	&\equiv 231 + 66 + 126 \pmod{462} \\
+	&\equiv 423 \pmod{462}
+\end{align*}
+
+Portanto, o número final de soldados do general chinês é de 423.
