@@ -1,0 +1,39 @@
+Sejam $a, b, c, n \in \mathbb{Z}, n > 0$. \\
+Demonstre que $ac \equiv bc \pmod{n} \iff a \equiv b \pmod{\frac{n}{mdc(c, n)}}$. \\
+\emph{Resolução.} \\
+Demonstremos primeiro que $ac \equiv bc \pmod{n} \implies a \equiv b \pmod{\frac{n}{mdc(c, n)}}$. \\
+(1) Assuma $ac \equiv bc \pmod{n}$, por hipótese. \\
+(2) Logo, $n | ac - bc$, por def. de congruência. \\
+(3) Então $\exists k_1 \in \mathbb{Z}, k_1n = ac - bc$, por def. de divisibilidade em (2). \\
+(4) Note que:
+\begin{align*}
+	k_1n = ac - bc &\implies k_1n = (a - b)c &\quad \text{(por aritmética)} \\
+	&\implies \frac{k_1n}{mdc(c, n)} = \frac{(a-b)c}{mdc(c, n)} &\quad \text{(por div. de $mdc(c, n)$)} \\
+\end{align*}
+(5) Note que $mdc(\frac{n}{mdc(c, n)}, \frac{c}{mdc(c, n)}) = 1$. Ou seja, eles são coprimos. \\
+(6) Por reescrita em (4), note que:
+\begin{align*}
+	\frac{n}{mdc(c, n)} | \frac{(a-b)c}{mdc(c,n)}
+\end{align*}
+(7) Contudo, por (5), temos que:
+\begin{align*}
+	\frac{n}{mdc(c, n)} | a - b \implies a \equiv b \pmod{\frac{n}{mdc(c, n)}} \quad \text{(por def. de congruência)}
+\end{align*}
+
+Agora, demonstremos que $a \equiv b \pmod{\frac{n}{mdc(c, n)}} \implies ac \equiv bc \pmod{n}$. \\
+(1) Assuma $a \equiv b \pmod{\frac{n}{mdc(c, n)}}$, por hipótese. \\
+(2) Logo, $frac{n}{mdc(c, n)}} | a - b$, por def. de congruência. \\
+(3) Então, $\exists k_1 \in \mathbb{Z}, frac{n}{mdc(c, n)}} k_1 = a - b$, por def. de divisibilidade em (2). \\
+(4) Seja $d = mdc(c, n)$. Então, $d|c$ e $d|n$, por def. de mdc. \\
+(5) Assim, $\exists k_2, k_3 \in \mathbb{Z}, k_2d = c, k_3d = n$, por def. de divisibilidade em (4). \\
+Temos:
+\begin{align*}
+	frac{n}{mdc(c, n)}} k_1 = a - b &\implies frac{n}{mdc(c, n)}}k_1c = (a - b)c &\quad \text{(por multiplicação por $c$)} \\ &\implies
+	frac{n}{d}} k_1c = ac - bc &\quad \text{(por substituição com $d$)} \\ &\implies
+	frac{n}{d}} k_1 k_2d = ac - bc &\quad \text{(por (5))} \\ &\implies
+	n k_1 k_2 = ac - bc &\quad \text{(por aritmética)} \\ &\implies
+	n k_4 = ac - bc &\quad \text{(para $k_4 = k_1k_2$)} \\ &\implies
+	ac \equiv bc \pmod{n} &\quad \text{(por def. de congruência)} 
+\end{align*}
+
+Portanto, está demonstrado que $ac \equiv bc \pmod{n} \iff a \equiv b \pmod{\frac{n}{mdc(c, n)}}$. \\
