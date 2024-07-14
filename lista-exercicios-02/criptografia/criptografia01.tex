@@ -16,10 +16,43 @@ $p = 3, q = 11, e = 17$. \\
 						3 &= 1 \cdot 2 + 1 &\quad (1 = 3 - 2) \\ 
 						2 &= 2 \cdot 1 0
 			\end{align*}
-		\item Vamos calcular o inverso de 17 módulo 20:
-
+		\item Vamos calcular o inverso modular de 17 módulo 20:
+			\begin{align*}
+				1 &= 3 - 2 \\ 
+				&= 3 - (17 - 5 \cdot 3) \\
+				&= 3 - (17 - 5 \cdot (20 - 17)) \\
+				&= 3 - (17 - 5 \cdot 20 + 5 \cdot 17) \\
+				&= 3 - 17 + 5 \cdot 20 - 5 \cdot 17 \\
+				&= 20 - 17 - 17 + 5 \cdot 20 - 5 \cdot 17 \\
+				&= 6 \cdot 20 - 7 \cdot 17 \\
+			\end{align*}
+		\item Como $-7 \equiv 13 \pmod{20}$, então temos o inverso modular $d = 13$. 
+		\item Portanto, temos que as chaves pública e privada são, respectivamente, $(17, 33)$ e $13$.
 	\end{enumerate}
 
 	\item Desencripte o texto cifrado $c = 4$ para Alice. \\
 	\emph{Resolução}. \\
+	Tomando o texto cifrado $c = 4$ de Beto e a chave privada $d = 13$ de Alice, vamos desencriptar em um texto claro $m$ a partir da fórmula $m = c^d \bmod{n}$. \\
+	Temos:
+	\begin{align*}
+		m &= 4^{13} \bmod{33} \\ 
+		&= 4 \cdot 4^2 \cdot 4^2 \cdot 4^4 \cdot 4^4 \bmod{33}
+	\end{align*}
+	Vamos calcular cada potência em $\bmod{33}$:
+	\begin{enumerate}
+		\item $4 \bmod{33} = 4$;
+		\item $4^2 \bmod{33} = 16 \bmod{33} = 16$;
+		\item $4^4 \bmod{33} = (4^2 \bmod{33})^2 \bmod{33} = 16^2 \bmod{33} = 256 \bmod{33} = 25$.
+	\end{enumerate}
+	Ou seja,
+	\begin{align*}
+		m &= 4 \cdot 4^2 \cdot 4^2 \cdot 4^4 \cdot 4^4 \bmod{33} \\
+		&= (4 \cdot 16 \cdot 16 \cdot 25 \cdot 25) \bmod{33} \\
+		&= (4 \cdot 16^2 \cdot 25^2) \bmod{33} \\
+		&= (1024 \cdot 625) \bmod{33} \\
+		&= (1024 \bmod{33}) \cdot (625 \bmod{33}) \bmod{33} \\
+		&= 1 \cdot 31 \bmod{33} \\
+		&= 31 \\
+	\end{align*}
+	Portanto, o texto claro para Alice é $31$.
 \end{enumerate}
