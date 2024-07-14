@@ -28,10 +28,10 @@ e os $M$:
 Logo, temos:
 \begin{align*}
 	s &\equiv s_1 \cdot M_1^{\Phi(m_1)} + s_2 \cdot M_2^{\Phi(m_2)} + s_3 \cdot M_3^{\Phi(m_3)} \pmod{m} \\
-	&\equiv 3 \cdot 77^3 + 3 \cdot 66^6 + 5 \cdot 42^{10} \pmod{462} \\
-	&\equiv (3 \cdot 77^3 \bmod{462}) + (3 \cdot 66^6 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
-	&\equiv (3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
-	&= (3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + \\& (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+	&\equiv 3 \cdot 77^2 + 3 \cdot 66^6 + 5 \cdot 42^{10} \pmod{462} \\
+	&\equiv (3 \cdot 77^2 \bmod{462}) + (3 \cdot 66^6 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+	&\equiv (3 \cdot 77 \cdot 77 \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
+	&= (3 \cdot 77 \cdot 77 \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + \\& (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\
 \end{align*}
 Resolvamos $(66^2 \bmod{462})^3$:
 \begin{align*}
@@ -54,8 +54,9 @@ Logo:
 \end{displaymath}
 Retomando:
 \begin{align*}
-	&(3 \cdot 77 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + \\& (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\ &\equiv (3 \cdot 77 \cdot 385 \bmod{462}) + (3 \cdot 330 \bmod{462}) + (5 \cdot 210) \pmod{462} \\ 
-	&\equiv (88935 \bmod{462}) + (990 \bmod{462}) + (1050 \bmod{462}) \pmod{462} \\ 
+	&(3 \cdot 77 \cdot 77 \bmod{462}) + (3 \cdot (66^2 \bmod{462})^3 \bmod{462}) + \\& (5 \cdot 42^{10} \bmod{462}) \pmod{462} \\ &\equiv (3 \cdot (77^2 \bmod{462}) \bmod{462}) + (3 \cdot 330 \bmod{462}) + (5 \cdot 210) \pmod{462} \\ 
+	&\equiv (3 \cdot (5929 \bmod{462}) \bmod{462}) + (990 \bmod{462}) + (1050 \bmod{462}) \pmod{462} \\ 
+	&\equiv (3 \cdot 385 \bmod{462}) + 66 + 126 \pmod{462} \\
 	&\equiv 231 + 66 + 126 \pmod{462} \\
 	&\equiv 423 \pmod{462}
 \end{align*}
