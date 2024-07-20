@@ -1,0 +1,28 @@
+Considere um computador que representa números inteiros de 0 a $2^{10} - 1$, ou seja, de 10 bits. Para aumentar a capacidade de processamento deste computador, podemos utilizar o teorema chinês dos restos com os módulos $2^{9} - 1, 2^{7} - 1, 2^{5} - 1$.
+\begin{enumerate}
+	\item Como representar $2^{11}, 2^{13}$ nos módulos acima? \\ 
+	\emph{Resolução.} 
+	\begin{itemize}
+		\item $2^{11} \bmod{2^9 - 1} = 2^9 \cdot 2^2 \bmod{511} = 1 \cdot 4 \bmod{511} = 4$
+		\item $2^{11}\bmod{2^7 - 1} = 2^7 \cdot 2^4 \bmod{127} = 1 \cdot 16 \bmod{127} = 16$
+		\item $2^{11} \bmod{2^5 - 1} = 2^5 \cdot 2^6 \bmod{31} = 1 \cdot 64 \bmod{31} = 2$
+		\item $2^{13} \bmod{2^9 - 1} = 2^9 \cdot 2^4 \bmod{511} = 1 \cdot 16 \bmod{511} = 16$
+		\item $2^{13} \bmod{2^7 - 1} = 2^7 \cdot 2^6 \bmod{127} = 1 \cdot 64 \bmod{127} = 64$
+		\item $2^{13} \bmod{2^5 - 1} = 2^5 \cdot 2^8 \bmod{31} = 1 \cdot 256 \bmod{31} = 8$
+	\end{itemize}
+	\item A partir das triplas de valores, determine a tripla da soma $2^{11} + 2^{13}$. \\ 
+	\emph{Resolução.} Para $2^{11}$ temos $(4, 16, 2)$, e para $2^{13}$ temos $(16, 64, 8)$. Portanto, temos:
+	\begin{align*}
+		(4, 16, 1) + (16, 64, 8) &= (4 + 16 \bmod{511}, 16 + 64 \bmod{511}, 8 + 2 \bmod{31}) 
+					\\ &= (20, 80, 10)
+	\end{align*}
+	\item Exiba o sistema de congruências da soma $2^{11} + 2^{13}$. \\
+	\emph{Resolução.} A soma corresponde ao sistema abaixo:
+	\begin{align*}
+		x &\equiv 20 \pmod{511}
+		x &\equiv 80 \pmod{127}
+		x &\equiv 10 \pmod{31}
+	\end{align*}
+	\item Com o esquema referenciado nesta questão, o computador conseguiria representar números até qual valor? \\
+	\emph{Resolução.} Até o produto dos módulos, sendo este $m = 511 \cdot 127 \cdot 31 = 2011807$.
+\end{enumerate}
