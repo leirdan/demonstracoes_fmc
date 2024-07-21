@@ -1,0 +1,14 @@
+Demonstre que $mdc(2^a - 1, 2^b - 1) = 2^{mdc(a, b)} - 1$. \\
+\emph{Resolução.} \\
+Sejam $a, b \in \mathbb{Z}, a, b \ge 0$. Seja $d = mdc(a, b)$. \\
+(Provemos que $2^d - 1 \mid 2^a - 1 \land 2^b - 1$.) \\
+(1) Note que $2^d - 1 | 2^d - 1$. \\
+(2) Ou seja, $2^d \equiv 1 \pmod{2^d - 1}$, por def. de congruência modular. \\
+(3) Por potenciação, temos $(2^d)^\frac{a}{d} \equiv 1^\frac{a}{d} \pmod{2^d - 1}$. \\
+(4) Por aritmética, temos $2^a \equiv 1 \pmod{2^d - 1}$. \\
+(5) Por congruência, temos $2^d - 1 | 2^a - 1$. \\
+(6) Analogamente, pelos passos (3), (4) e (5), temos $2^d - 1 | 2^b - 1$. \\
+(7) Portanto, $2^d - 1 | 2^a - 1 \text{e} 2^b - 1$. \\
+
+[Agora, mostremos que $2^d - 1$ é o melhor divisor destes números.] \\
+A concluir.
